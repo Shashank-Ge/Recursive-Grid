@@ -91,7 +91,7 @@ export function handleCellClick (
  */
 
 
-// FUNCTION TO GET THE COLOR OF THE CELL 
+// FUNCTION TO GET THE COLOR OF THE CELL
 
 export function getCellColorClass (cell : Cell) : string {
     if (cell.locked){
