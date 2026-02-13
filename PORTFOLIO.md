@@ -38,8 +38,8 @@ An interactive 3x3 grid game demonstrating advanced React patterns, TypeScript, 
 - Modern deployment workflows
 
 ## 🔗 Links
-- **Live Demo**: [your-app.vercel.app]
-- **GitHub**: [https://github.com/Shashank-Ge/Recursive-Grid]
+- **Deployed Link **: [https://recursive-grid-alpha.vercel.app/](https://recursive-grid-alpha.vercel.app/)
+- **GitHub**: [https://github.com/Shashank-Ge/Recursive-Grid](https://github.com/Shashank-Ge/Recursive-Grid)
 - **Tests**: Run `npm test` to see coverage
 
 ## 💡 Future Enhancements

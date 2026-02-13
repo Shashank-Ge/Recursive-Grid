@@ -2,6 +2,16 @@
   "name": "recursive-grid",
   "version": "0.1.0",
   "private": true,
+  "description": "An interactive 3×3 grid game with recursive rules and dynamic effects",
+  "author": "Shashank Goel",
+  "homepage": "https://recursive-grid-alpha.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shashank-Ge/Recursive-Grid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shashank-Ge/Recursive-Grid/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
