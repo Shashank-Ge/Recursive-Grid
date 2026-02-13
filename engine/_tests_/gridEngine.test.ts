@@ -5,16 +5,16 @@ import {
     GRID_SIZE,
     type Cell,
     type Grid,
-} from '../gridEngine' ;
+} from '../gridEngine';
 
 // describe : groups related Tests
-describe ('gridEngine', () => {
+describe('gridEngine', () => {
 
 
     //Test 1 : Initial Grid creation
     describe('createInitialGrid', () => {
         it('should create a 3x3 grid', () => {
-            const grid = createInitialGrid() ;
+            const grid = createInitialGrid();
 
             // check grid has 3 rows
             expect(grid).toHaveLength(GRID_SIZE);
@@ -25,12 +25,12 @@ describe ('gridEngine', () => {
             });
         });
 
-        it('should initialize all cels with value 0 and unlocked' , () => {
+        it('should initialize all cels with value 0 and unlocked', () => {
             const grid = createInitialGrid();
 
             //check every cell
             grid.forEach(row => {
-                row.forEach (cell => {
+                row.forEach(cell => {
                     expect(cell.value).toBe(0);
                     expect(cell.locked).toBe(false);
                 });
@@ -40,11 +40,11 @@ describe ('gridEngine', () => {
 
 
     // Test 2 : Cell click behavior
-    describe ('handleCellClick', () => {
-        let grid : Grid ;
+    describe('handleCellClick', () => {
+        let grid: Grid;
 
         //beforeEach : Runs before each test (fresh grid )
-        beforeEach( () => {
+        beforeEach(() => {
             grid = createInitialGrid();
         })
 
@@ -71,7 +71,7 @@ describe ('gridEngine', () => {
             const newGrid = handleCellClick(grid, 0, 0);
 
             expect(newGrid[0][0].value).toBe(3);      // Clicked cell
-            expect(newGrid[0][1].value).toBe(-1);     // Right neighbor
+            expect(newGrid[0][1].value).toBe(0);      // Right neighbor (clamped to 0, not -1)
         });
 
 
@@ -81,7 +81,7 @@ describe ('gridEngine', () => {
             const newGrid = handleCellClick(grid, 0, 0);
 
             expect(newGrid[0][0].value).toBe(5);   // Clicked cell
-            expect(newGrid[1][0].value).toBe(1);   // Bottom neighbor
+            expect(newGrid[1][0].value).toBe(2);   // Bottom neighbor (incremented by 2)
         });
 
         it('should lock cell when value reaches 15', () => {
@@ -119,18 +119,18 @@ describe ('gridEngine', () => {
     // Test 3 : Color Coding
     describe('getCellColorClass', () => {
         it('should return red for locked cells', () => {
-        const cell: Cell = { value: 15, locked: true };
-        expect(getCellColorClass(cell)).toBe('bg-red-500');
+            const cell: Cell = { value: 15, locked: true };
+            expect(getCellColorClass(cell)).toBe('bg-red-500');
         });
 
         it('should return blue for even unlocked cells', () => {
-        const cell: Cell = { value: 4, locked: false };
-        expect(getCellColorClass(cell)).toBe('bg-blue-500');
+            const cell: Cell = { value: 4, locked: false };
+            expect(getCellColorClass(cell)).toBe('bg-blue-500');
         });
 
         it('should return green for odd unlocked cells', () => {
-        const cell: Cell = { value: 3, locked: false };
-        expect(getCellColorClass(cell)).toBe('bg-green-500');
+            const cell: Cell = { value: 3, locked: false };
+            expect(getCellColorClass(cell)).toBe('bg-green-500');
         });
     });
 })

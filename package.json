@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "next lint",
     "test": "jest",
-    "test-match":"jest --watch"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -26,9 +26,9 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "tailwindcss": "^4",
     "ts-jest": "^29.4.6",
     "typescript": "^5"
   }
 }
-
