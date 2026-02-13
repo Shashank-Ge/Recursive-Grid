@@ -67,7 +67,7 @@ recursive-grid/
 ```bash
 # Clone the repository
 git clone https://github.com/Shashank-Ge/Recursive-Grid.git
-cd Recursive-Grid/self-made/recursive-grid
+cd Recursive-Grid
 
 # Install dependencies
 npm install
