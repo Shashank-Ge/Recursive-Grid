@@ -43,7 +43,7 @@ export function handleCellClick(
     //creating a deep copy to change nested objects
     const newGrid = grid.map(rowArray =>
         rowArray.map(cell => ({ ...cell }))
-    )
+    );
 
     // Rule 2 : increment clicked cell by 1
     newGrid[row][col].value += 1;
@@ -85,8 +85,8 @@ export function getCellBackgroundColor(cell: Cell): string {
 
     // Light Gray gradient for even, Navy Blue gradient for odd
     return cell.value % 2 === 0
-        ? 'linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%)' // subtle gray gradient
-        : 'linear-gradient(135deg, #1e3a8a 0%, #1a237e 100%)'; // navy blue gradient
+        ? 'linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%)'
+        : 'linear-gradient(135deg, #1e3a8a 0%, #1a237e 100%)';
 }
 
 // FUNCTION TO GET THE TEXT COLOR OF THE CELL
@@ -98,4 +98,3 @@ export function getCellTextColor(cell: Cell): string {
     // Black for even (light gray bg), White for odd (navy blue bg)
     return cell.value % 2 === 0 ? '#1f2937' : '#ffffff';
 }
-

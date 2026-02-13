@@ -13,4 +13,3 @@ export function useGridState() {
 
     return { grid, onCellClick };
 }
-

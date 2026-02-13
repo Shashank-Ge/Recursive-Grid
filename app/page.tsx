@@ -8,6 +8,7 @@ import { useGridState } from '../hooks/useGridState';
 export default function Home() {
   // using custom hook
   const { grid, onCellClick } = useGridState();
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden">
       {/* Radial glow background - softer and more diffused */}
@@ -68,10 +69,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Grid - increased size and prominence, responsive */}
         <Grid grid={grid} onCellClick={onCellClick} />
 
-        {/*Legend - more subtle, responsive */}
+        {/*Legend -  subtle, responsive */}
         <div className="mt-8 sm:mt-10 md:mt-12 bg-white/[0.03] backdrop-blur-md rounded-2xl px-4 sm:px-6 md:px-8 py-3 border border-white/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.05)]">
           <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 items-center justify-center">
             <div className="flex items-center gap-2 sm:gap-3 group cursor-default">
