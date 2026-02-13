@@ -66,17 +66,38 @@ export default function Home() {
       <div className="mt-10 bg-white/10 backdrop-blur-md rounded-2xl px-8 py-4 border border-white/20 shadow-2xl">
         <div className="flex gap-8 items-center justify-center">
           <div className="flex items-center gap-3 group cursor-default">
-            <div className="w-8 h-8 bg-blue-500 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-200"></div>
+            <div
+              className="w-8 h-8 rounded group-hover:scale-110 transition-transform duration-200"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%)',
+                boxShadow: '2px 2px 0px black, inset 0 1px 2px rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px'
+              }}
+            ></div>
             <span className="text-white font-medium text-lg">Even</span>
           </div>
           <div className="w-px h-8 bg-white/30"></div>
           <div className="flex items-center gap-3 group cursor-default">
-            <div className="w-8 h-8 bg-green-500 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-200"></div>
+            <div
+              className="w-8 h-8 rounded group-hover:scale-110 transition-transform duration-200"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #1e3a8a 0%, #1a237e 100%)',
+                boxShadow: '2px 2px 0px black, inset 0 1px 2px rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px'
+              }}
+            ></div>
             <span className="text-white font-medium text-lg">Odd</span>
           </div>
           <div className="w-px h-8 bg-white/30"></div>
           <div className="flex items-center gap-3 group cursor-default">
-            <div className="w-8 h-8 bg-red-500 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-200"></div>
+            <div
+              className="w-8 h-8 rounded group-hover:scale-110 transition-transform duration-200"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
+                boxShadow: '2px 2px 0px black, inset 0 1px 2px rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px'
+              }}
+            ></div>
             <span className="text-white font-medium text-lg">Locked</span>
           </div>
         </div>

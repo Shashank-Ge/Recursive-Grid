@@ -1,7 +1,8 @@
 import {
     createInitialGrid,
     handleCellClick,
-    getCellColorClass,
+    getCellBackgroundColor,
+    getCellTextColor,
     GRID_SIZE,
     type Cell,
     type Grid,
@@ -116,21 +117,38 @@ describe('gridEngine', () => {
         });
     });
 
-    // Test 3 : Color Coding
-    describe('getCellColorClass', () => {
-        it('should return red for locked cells', () => {
+    describe('getCellBackgroundColor', () => {
+        it('should return red gradient for locked cells', () => {
             const cell: Cell = { value: 15, locked: true };
-            expect(getCellColorClass(cell)).toBe('bg-red-500');
+            expect(getCellBackgroundColor(cell)).toBe('linear-gradient(135deg, #ef4444 0%, #dc2626 100%)');
         });
 
-        it('should return blue for even unlocked cells', () => {
+        it('should return light gray gradient for even unlocked cells', () => {
             const cell: Cell = { value: 4, locked: false };
-            expect(getCellColorClass(cell)).toBe('bg-blue-500');
+            expect(getCellBackgroundColor(cell)).toBe('linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%)');
         });
 
-        it('should return green for odd unlocked cells', () => {
+        it('should return navy blue gradient for odd unlocked cells', () => {
             const cell: Cell = { value: 3, locked: false };
-            expect(getCellColorClass(cell)).toBe('bg-green-500');
+            expect(getCellBackgroundColor(cell)).toBe('linear-gradient(135deg, #1e3a8a 0%, #1a237e 100%)');
+        });
+    });
+
+    // Test 4 : Text Color
+    describe('getCellTextColor', () => {
+        it('should return white for locked cells', () => {
+            const cell: Cell = { value: 15, locked: true };
+            expect(getCellTextColor(cell)).toBe('#ffffff');
+        });
+
+        it('should return dark gray for even unlocked cells', () => {
+            const cell: Cell = { value: 4, locked: false };
+            expect(getCellTextColor(cell)).toBe('#1f2937');
+        });
+
+        it('should return white for odd unlocked cells', () => {
+            const cell: Cell = { value: 3, locked: false };
+            expect(getCellTextColor(cell)).toBe('#ffffff');
         });
     });
 })

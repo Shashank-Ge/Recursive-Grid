@@ -76,14 +76,26 @@ export function handleCellClick(
 
 
 
-// FUNCTION TO GET THE COLOR OF THE CELL
+// FUNCTION TO GET THE BACKGROUND COLOR/GRADIENT OF THE CELL
 
-export function getCellColorClass(cell: Cell): string {
+export function getCellBackgroundColor(cell: Cell): string {
     if (cell.locked) {
-        return 'bg-red-500';
+        return 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)'; // red gradient for locked
     }
 
-    // returning blue if even, green if odd
-    return cell.value % 2 === 0 ? 'bg-blue-500' : 'bg-green-500';
+    // Light Gray gradient for even, Navy Blue gradient for odd
+    return cell.value % 2 === 0
+        ? 'linear-gradient(135deg, #f5f5f5 0%, #d4d4d4 100%)' // subtle gray gradient
+        : 'linear-gradient(135deg, #1e3a8a 0%, #1a237e 100%)'; // navy blue gradient
+}
+
+// FUNCTION TO GET THE TEXT COLOR OF THE CELL
+export function getCellTextColor(cell: Cell): string {
+    if (cell.locked) {
+        return '#ffffff'; // white for locked
+    }
+
+    // Black for even (light gray bg), White for odd (navy blue bg)
+    return cell.value % 2 === 0 ? '#1f2937' : '#ffffff';
 }
 
