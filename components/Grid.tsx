@@ -9,10 +9,12 @@ interface GridProps {
 
 export function Grid({ grid, onCellClick }: GridProps) {
     return (
-        <div className="inline-block p-8 bg-gradient-to-br from-purple-600/30 via-purple-500/20 to-pink-500/30 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-purple-400/50 hover:border-purple-300/70 transition-all duration-300">
+        <div className="inline-block p-6 sm:p-8 md:p-10 bg-gradient-to-br from-purple-600/30 via-purple-500/20 to-pink-500/30 backdrop-blur-md rounded-[20px] sm:rounded-[24px] border-2 border-purple-400/50 hover:border-purple-300/70 transition-all duration-300 float-animation" style={{
+            boxShadow: '0 0 50px rgba(168, 85, 247, 0.3), 0 20px 40px rgba(0, 0, 0, 0.3)'
+        }}>
             {/* Map over rows */}
             {grid.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex gap-2 mb-2 last:mb-0">
+                <div key={rowIndex} className="flex gap-2 sm:gap-[10px] mb-2 sm:mb-[10px] last:mb-0">
                     {/* Map over columns */}
                     {row.map((cell, colIndex) => (
                         <Cell

@@ -18,23 +18,18 @@ export function Cell({ cell, onClick }: CellProps) {
         <button
             onClick={onClick}
             disabled={cell.locked}
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-[108px] md:h-[108px] text-xl sm:text-2xl md:text-[28px] font-bold rounded-[4px] border-none transition-all duration-150"
             style={{
                 backgroundImage: backgroundColor,
                 color: textColor,
-                width: '96px',
-                height: '96px',
-                fontSize: '24px',
-                fontWeight: 'bold',
-                borderRadius: '4px',
                 boxShadow: '2px 2px 0px black, inset 0 1px 2px rgba(255, 255, 255, 0.3)',
-                border: 'none',
                 cursor: cell.locked ? 'not-allowed' : 'pointer',
                 opacity: cell.locked ? 0.75 : 1,
-                transition: 'transform 0.2s, box-shadow 0.2s',
+                transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
             }}
             onMouseEnter={(e) => {
                 if (!cell.locked) {
-                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.transform = 'scale(1.03)';
                     e.currentTarget.style.boxShadow = '3px 3px 0px black, inset 0 1px 3px rgba(255, 255, 255, 0.4)';
                 }
             }}
@@ -50,7 +45,7 @@ export function Cell({ cell, onClick }: CellProps) {
             }}
             onMouseUp={(e) => {
                 if (!cell.locked) {
-                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.transform = 'scale(1.03)';
                     e.currentTarget.style.boxShadow = '3px 3px 0px black, inset 0 1px 3px rgba(255, 255, 255, 0.4)';
                 }
             }}
