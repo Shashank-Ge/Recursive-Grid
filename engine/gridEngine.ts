@@ -73,22 +73,7 @@ export function handleCellClick (
     return newGrid ;
 }
 
-/**
- * Determines the Tailwind CSS class for a cell's color
- *
- * Color Rules:
- * - Red: Locked cells (value ≥ 15)
- * - Blue: Even values (unlocked)
- * - Green: Odd values (unlocked)
- *
- * Why this function:
- * - Centralizes styling logic
- * - Easy to change colors later
- * - Keeps components clean
- *
- * @param cell - The cell to get color for
- * @returns Tailwind CSS class string
- */
+
 
 
 // FUNCTION TO GET THE COLOR OF THE CELL
